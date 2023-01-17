@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -C play dev"
+    "dev": "pnpm -C play dev",
+    "docs:dev": "pnpm -C docs dev",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,18 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "unplugin-vue-define-options": "^1.1.4"
+    "commitizen": "^4.2.6",
+    "cz-git": "^1.4.1",
+    "eslint": "^8.32.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "mrm": "^4.1.13",
+    "sass": "^1.57.1",
+    "unplugin-vue-define-options": "^1.1.4",
+    "vitest": "^0.27.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }

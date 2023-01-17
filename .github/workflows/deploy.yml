@@ -1,0 +1,20 @@
+name: Bear-UI Deploy
+
+on:
+  push:
+    # master 分支有 push 时触发
+    branches: [dev]
+
+jobs:
+  deploy:
+    # 指定虚拟机环境
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.2.1
+      - name: Install modules
+        run: pnpm install
