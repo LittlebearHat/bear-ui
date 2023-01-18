@@ -1,11 +1,15 @@
 {
+  "name": "bear-ui",
   "version": "1.0.0",
   "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
+    "commit": "git cz",
     "dev": "pnpm -C play dev",
     "docs:dev": "pnpm -C docs dev",
+    "docs:build": "pnpm -C docs build",
+    "docs:serve": "pnpm -C docs serve",
     "test": "vitest",
     "test:run": "vitest run",
     "prepare": "husky install"
@@ -13,6 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@bear-ui/components": "workspace:*",
     "@bear-ui/hooks": "workspace:*",
@@ -25,6 +32,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
     "commitizen": "^4.2.6",
     "cz-git": "^1.4.1",
     "eslint": "^8.32.0",
@@ -38,5 +46,21 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
-  }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LittlebearHat/bear-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LittlebearHat/bear-ui/issues"
+  },
+  "homepage": "https://github.com/LittlebearHat/bear-ui#readme"
 }

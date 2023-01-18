@@ -1,4 +1,4 @@
-name: Bear-UI Deploy
+name: Bear-UI Pnpm
 
 on:
   push:
