@@ -27,10 +27,10 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-IFBQ2AEY.js";
-import "./chunk-2GYMEC55.js";
+} from "./chunk-2ATAY36H.js";
+import "./chunk-WROYIC7X.js";
 
-// ../node_modules/.pnpm/vue-demi@0.13.11_vue@3.2.45/node_modules/vue-demi/lib/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+vue-demi@0.13.11_vue@3.2.45/node_modules/vue-demi/lib/index.mjs
 var isVue2 = false;
 var isVue3 = true;
 function set(target, key, val) {
@@ -50,7 +50,7 @@ function del(target, key) {
   delete target[key];
 }
 
-// ../node_modules/.pnpm/@vueuse+shared@9.10.0_vue@3.2.45/node_modules/@vueuse/shared/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+shared@9.11.1_vue@3.2.45/node_modules/@vueuse/shared/index.mjs
 var __defProp$9 = Object.defineProperty;
 var __defProps$6 = Object.defineProperties;
 var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;
@@ -367,7 +367,9 @@ function createGlobalState(stateFactory) {
 function createInjectionState(composable) {
   const key = Symbol("InjectionState");
   const useProvidingState = (...args) => {
-    provide(key, composable(...args));
+    const state = composable(...args);
+    provide(key, state);
+    return state;
   };
   const useInjectedState = () => inject(key);
   return [useProvidingState, useInjectedState];
@@ -1531,7 +1533,7 @@ function whenever(source, cb, options) {
   }, options);
 }
 
-// ../node_modules/.pnpm/@vueuse+core@9.10.0_vue@3.2.45/node_modules/@vueuse/core/index.mjs
+// ../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@9.11.1_vue@3.2.45/node_modules/@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   let options;
   if (isRef(optionsOrRef)) {
@@ -1544,10 +1546,11 @@ function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   const {
     lazy = false,
     evaluating = void 0,
+    shallow = false,
     onError = noop
   } = options;
   const started = ref(!lazy);
-  const current = ref(initialState);
+  const current = shallow ? shallowRef(initialState) : ref(initialState);
   let counter = 0;
   watchEffect(async (onInvalidate) => {
     if (!started.value)
@@ -3580,9 +3583,9 @@ var __spreadValues$d = (a, b) => {
 };
 function useElementByPoint(options) {
   const element = ref(null);
-  const { x, y } = options;
+  const { x, y, document: document2 = defaultDocument } = options;
   const controls = useRafFn(() => {
-    element.value = document.elementFromPoint(resolveUnref(x), resolveUnref(y));
+    element.value = (document2 == null ? void 0 : document2.elementFromPoint(resolveUnref(x), resolveUnref(y))) || null;
   });
   return __spreadValues$d({
     element
@@ -5684,6 +5687,57 @@ function usePointer(options = {}) {
     isInside
   });
 }
+function usePointerLock(target, options = {}) {
+  const { document: document2 = defaultDocument, pointerLockOptions } = options;
+  const isSupported = useSupported(() => document2 && "pointerLockElement" in document2);
+  const element = ref();
+  const triggerElement = ref();
+  let targetElement;
+  if (isSupported.value) {
+    useEventListener(document2, "pointerlockchange", () => {
+      var _a2;
+      const currentElement = (_a2 = document2.pointerLockElement) != null ? _a2 : element.value;
+      if (targetElement && currentElement === targetElement) {
+        element.value = document2.pointerLockElement;
+        if (!element.value)
+          targetElement = triggerElement.value = null;
+      }
+    });
+    useEventListener(document2, "pointerlockerror", () => {
+      var _a2;
+      const currentElement = (_a2 = document2.pointerLockElement) != null ? _a2 : element.value;
+      if (targetElement && currentElement === targetElement) {
+        const action = document2.pointerLockElement ? "release" : "acquire";
+        throw new Error(`Failed to ${action} pointer lock.`);
+      }
+    });
+  }
+  async function lock(e, options2) {
+    var _a2;
+    if (!isSupported.value)
+      throw new Error("Pointer Lock API is not supported by your browser.");
+    triggerElement.value = e instanceof Event ? e.currentTarget : null;
+    targetElement = e instanceof Event ? (_a2 = unrefElement(target)) != null ? _a2 : triggerElement.value : unrefElement(e);
+    if (!targetElement)
+      throw new Error("Target element undefined.");
+    targetElement.requestPointerLock(options2 != null ? options2 : pointerLockOptions);
+    return await until(element).toBe(targetElement);
+  }
+  async function unlock() {
+    if (!element.value)
+      return false;
+    document2.exitPointerLock();
+    await until(element).toBeNull();
+    return true;
+  }
+  return {
+    isSupported,
+    element,
+    triggerElement,
+    lock,
+    unlock
+  };
+}
 var SwipeDirection;
 (function(SwipeDirection2) {
   SwipeDirection2["UP"] = "UP";
@@ -7268,19 +7322,18 @@ function useVirtualListResources(list) {
   return { state, source, currentList, size, containerRef };
 }
 function createGetViewCapacity(state, source, itemSize) {
-  return (containerHeight) => {
+  return (containerSize) => {
     if (typeof itemSize === "number")
-      return Math.ceil(containerHeight / itemSize);
+      return Math.ceil(containerSize / itemSize);
     const { start = 0 } = state.value;
     let sum = 0;
     let capacity = 0;
     for (let i = start; i < source.value.length; i++) {
-      const height = itemSize(i);
-      sum += height;
-      if (sum >= containerHeight) {
-        capacity = i;
+      const size = itemSize(i);
+      sum += size;
+      capacity = i;
+      if (sum > containerSize)
         break;
-      }
     }
     return capacity - start;
   };
@@ -8044,6 +8097,7 @@ export {
   useParallax,
   usePermission,
   usePointer,
+  usePointerLock,
   usePointerSwipe,
   usePreferredColorScheme,
   usePreferredContrast,

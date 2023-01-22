@@ -1,0 +1,65 @@
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+
+@include b(input) {
+  // z-input
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+
+  @include e(wrapper) {
+    box-sizing: border-box;
+    display: inline-flex;
+    border: 1px solid #ccc;
+    flex: 1;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  @include e(prefix) {
+    display: inline-flex;
+    margin-left: 5px;
+  }
+
+  @include e(suffix) {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+
+
+
+  @include e(inner) {
+    display: inline-flex;
+    outline: none;
+    border: none;
+    background: none;
+    appearance: none;
+    padding: 0 10px;
+    width: 100%;
+    height: 30px;
+  }
+}
+
+// z-input__suffix
+
+// 增加前后元素 变成网格  让前后元素 跑到一行去
+@include b(input-group) {
+  @include e(append) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin-left: -1px;
+    box-shadow: 0 0 0 1px #ccc inset, 0 1px 0 0#ccc inset, 0 -1px 0 0 #ccc inset;
+  }
+
+  @include e(prepend) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    vertical-align: middle;
+    box-shadow: 1px 0 0 0 #ccc inset, 0 1px 0 0#ccc inset, 0 -1px 0 0 #ccc inset;
+  }
+}

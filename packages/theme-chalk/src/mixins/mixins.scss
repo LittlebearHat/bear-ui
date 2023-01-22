@@ -1,16 +1,18 @@
 @use 'config' as *;
 @forward 'config';
 
+
 // .b-button{}
 @mixin b($block) {
-  $B: $namespace + '-' + $block;
+  $B: $namespace+'-'+$block;
+
   .#{$B} {
     @content;
   }
 }
 
-// .b-button.is-xxx
-@mixin when ($state) {
+// .b-button.is-desiabled
+@mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {
       @content;
@@ -21,23 +23,23 @@
 // &--primary => .b-button--primary
 @mixin m($modifier) {
   @at-root {
-    #{& + $modifier-separator + $modifier} {
+    #{&+$modifier-separator+$modifier} {
       @content;
     }
   }
 }
 
-// &__header => .b-button__header
+// &__header  => .b-button__header
 @mixin e($element) {
   @at-root {
-    #{& + $element-separator + $element} {
+    #{&+$element-separator+$element} {
       @content;
     }
   }
 }
 
-
-// 使用方法 调用函数并传参
-@include b(button) {
-  color: red;
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background: $background-color;
+  border-color: $border-color;
 }

@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.36"
+    "@types/node": "^18.11.18",
+    "vitepress": "1.0.0-alpha.40",
+    "vitepress-theme-demoblock": "^2.0.1"
   }
 }

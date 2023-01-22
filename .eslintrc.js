@@ -23,6 +23,6 @@ module.exports = {
     'vue/prefer-import-from-vue': 'off'
   },
   globals: {
-    defineOptions: 'readonly'
+    defineOptions: 'writable'
   }
 }

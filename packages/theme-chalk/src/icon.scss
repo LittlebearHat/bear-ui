@@ -1,9 +1,18 @@
-@use './mixins/mixins.scss' as *;
-
+@use 'mixins/mixins.scss' as *;
+@keyframes transform {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @include b(icon) {
-  border: 1px solid blue;
   display: inline-flex;
   height: 1em;
   width: 1em;
   vertical-align: middle;
+  svg.loading {
+    animation: transform 1s linear infinite;
+  }
 }

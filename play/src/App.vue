@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // console.log(Icon);
-//import BIcon from "@bear-ui/components/icon"
+import BIcon from '@bear-ui/components/icon'
 import { AddCircle } from '@vicons/ionicons5'
+console.log(BIcon)
 </script>
 
 <template>

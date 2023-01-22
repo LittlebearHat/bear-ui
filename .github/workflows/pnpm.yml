@@ -18,3 +18,5 @@ jobs:
           version: 7.2.1
       - name: Install modules
         run: pnpm install
+      - name: Build
+        run: pnpm build
