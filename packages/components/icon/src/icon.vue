@@ -1,5 +1,8 @@
 <template>
-  <i :class="bem.b()" :style="style">
+  <i
+    :class="bem.b()"
+    :style="style"
+  >
     <slot></slot>
   </i>
 </template>

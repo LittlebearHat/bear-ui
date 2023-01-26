@@ -6,7 +6,9 @@ console.log(BIcon)
 </script>
 
 <template>
-  <b-icon :color="'red'">111</b-icon>
+  <b-icon :color="'red'">
+    <AddCircle></AddCircle>
+  </b-icon>
   <b-icon>
     <AddCircle></AddCircle>
   </b-icon>

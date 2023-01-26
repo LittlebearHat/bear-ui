@@ -11,6 +11,9 @@
   display: inline-flex;
   height: 1em;
   width: 1em;
+  line-height: 1em;
+  justify-content: center;
+  align-items: center;
   vertical-align: middle;
   svg.loading {
     animation: transform 1s linear infinite;
