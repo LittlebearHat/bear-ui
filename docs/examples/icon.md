@@ -2,7 +2,7 @@
 
 b-ui 推荐使用 xicons 作为图标库。
 
-```
+```bash
 $ pnpm install @vicons/ionicons5
 ```
 
@@ -12,16 +12,22 @@ $ pnpm install @vicons/ionicons5
 
 ```vue
 <template>
-  <b-icon color="red" size="60">
+  <b-icon color="red" size="20">
     <CashOutline />
   </b-icon>
-  <b-icon color="green" size="60">
+  <b-icon color="green" size="20">
     <CashOutline />
   </b-icon>
-  <b-icon color="blue" size="60">
+  <b-icon color="blue" size="20">
     <CashOutline />
   </b-icon>
 </template>
+
+<script setup>
+import BIcon from '@bear-ui/components/icon'
+import '@bear-ui/theme-chalk/src/index.scss'
+import { AddCircle, CashOutline } from '@vicons/ionicons5'
+</script>
 ```
 
 ## API

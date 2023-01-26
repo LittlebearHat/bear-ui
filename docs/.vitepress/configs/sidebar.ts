@@ -1,52 +1,20 @@
 export default {
-  '/api/': getApiSidebar(),
-  '/components/': getComponentsSidebar(),
-  '/guide/': getGuideSidebar()
+  '/guide/': getGuideSidebar(),
+  '/examples/': getExampleSidebar()
 }
 
-function getApiSidebar() {
-  return [
-    {
-      text: '功能',
-      collapsible: true,
-      items: [
-        {
-          text: '已实现',
-          link: '/api/'
-        }
-      ]
-    }
-  ]
-}
-
-function getComponentsSidebar() {
+function getExampleSidebar() {
   return [
     {
       text: '组件',
       items: [
         {
           text: 'Button 按钮',
-          link: '/components/button'
+          link: '/examples/button'
         },
         {
-          text: 'Tabs 标签页',
-          link: '/components/tabs'
-        },
-        {
-          text: 'Modal 对话框',
-          link: '/components/modal'
-        },
-        {
-          text: 'Tag 标签',
-          link: '/components/tag'
-        },
-        {
-          text: 'Vue 引用组件',
-          link: '/components/vue'
-        },
-        {
-          text: 'Vue Script',
-          link: '/components/vue-script'
+          text: 'Icon 图标',
+          link: '/examples/icon'
         }
       ]
     }
@@ -56,19 +24,24 @@ function getComponentsSidebar() {
 function getGuideSidebar() {
   return [
     {
-      text: '指南',
+      text: '基础',
       items: [
         {
-          text: '文档1',
-          link: '/guide/'
+          text: '安装',
+          link: '/guide/installation'
         },
         {
-          text: '文档2',
-          link: '/guide/button'
-        },
+          text: '快速开始',
+          link: '/guide/quickstart'
+        }
+      ]
+    },
+    {
+      text: '进阶',
+      items: [
         {
-          text: '文档3',
-          link: '/guide/modal'
+          text: 'xx',
+          link: '/xx'
         }
       ]
     }

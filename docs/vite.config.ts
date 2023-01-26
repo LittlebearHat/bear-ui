@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import { CashOutline } from '@vicons/ionicons5'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 
 export default defineConfig({
-  plugins: []
+  plugins: [DefineOptions()]
 })

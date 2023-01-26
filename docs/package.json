@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "vitepress": "1.0.0-alpha.40",
-    "vitepress-theme-demoblock": "^2.0.1"
+    "unplugin-vue-define-options": "^0.6.2",
+    "vitepress": "1.0.0-alpha.40"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
   }
 }

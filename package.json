@@ -8,6 +8,7 @@
     "commit": "git cz",
     "dev": "pnpm -C play dev",
     "build": "pnpm -C play build",
+    "preview": "pnpm -C play preview",
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
     "docs:serve": "pnpm -C docs serve",
@@ -19,7 +20,9 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "play",
+    "docs"
   ],
   "dependencies": {
     "@bear-ui/components": "workspace:*",
@@ -41,6 +44,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "sass": "^1.57.1",
+    "unplugin-vue-define-options": "^0.6.2",
     "vite": "^4.0.0",
     "vitest": "^0.27.2"
   },

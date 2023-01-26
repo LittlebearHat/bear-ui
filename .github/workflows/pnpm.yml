@@ -3,7 +3,7 @@ name: Bear-UI Pnpm
 on:
   push:
     # master 分支有 push 时触发
-    branches: [dev]
+    branches: [master]
 
 jobs:
   deploy:
@@ -20,3 +20,7 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+      - name: Build Docs
+        run: pnpm docs:build
+      - name: Serve Docs
+        run: pnpm docs:serve
