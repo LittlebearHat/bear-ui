@@ -22,5 +22,5 @@ jobs:
         run: pnpm build
       - name: Build Docs
         run: pnpm docs:build
-      - name: Serve Docs
-        run: pnpm docs:serve
+      # - name: Serve Docs
+      #   run: pnpm docs:serve

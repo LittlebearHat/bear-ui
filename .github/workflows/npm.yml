@@ -2,7 +2,7 @@ name: Bear-UI npm
 
 on:
   push:
-    branches: [dev]
+    branches: [master]
 
 jobs:
   deploy:
