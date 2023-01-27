@@ -1,6 +1,6 @@
 import _Icon from "./src/icon.vue"
 import {withInstall} from "@bear-ui/utils"
-const BIcon=withInstall(_Icon)
+export const BIcon=withInstall(_Icon)
 console.log("BICCC",BIcon)
 export default BIcon
 export * from "./src/icon"

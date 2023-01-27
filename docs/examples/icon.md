@@ -23,7 +23,7 @@ $ pnpm install @vicons/ionicons5
   </b-icon>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import BIcon from '@bear-ui/components/icon'
 import '@bear-ui/theme-chalk/src/index.scss'
 import { AddCircle, CashOutline } from '@vicons/ionicons5'

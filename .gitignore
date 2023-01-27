@@ -23,3 +23,5 @@ cache
 *.njsproj
 *.sln
 *.sw?
+*/dist
+*/cache
