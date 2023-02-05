@@ -10,24 +10,33 @@ $ pnpm install @vicons/ionicons5
 
 - 如果你想像用例一样直接使用，你需要全局注册组件，才能够直接在项目里使用。
 
-```vue
-<template>
-  <b-icon color="red" size="20">
-    <CashOutline />
-  </b-icon>
-  <b-icon color="green" size="20">
-    <CashOutline />
-  </b-icon>
-  <b-icon color="blue" size="20">
-    <CashOutline />
-  </b-icon>
+::: demo
+
+<template #source>
+<b-icon color="red" size="20">
+<CashOutline />
+</b-icon>
+<b-icon color="green" size="20">
+<CashOutline />
+</b-icon>
+<BIcon color="blue" size="20">
+<CashOutline />
+</BIcon>
+
+<br />
+
 </template>
 
-<script setup lang="ts">
-import BIcon from '@bear-ui/components/icon'
-import '@bear-ui/theme-chalk/src/index.scss'
-import { AddCircle, CashOutline } from '@vicons/ionicons5'
-</script>
+```vue
+<b-icon color="red" size="20">
+  <CashOutline />
+</b-icon>
+<b-icon color="green" size="20">
+  <CashOutline />
+</b-icon>
+<BIcon color="blue" size="20">
+  <CashOutline />
+</BIcon>
 ```
 
 ## API
