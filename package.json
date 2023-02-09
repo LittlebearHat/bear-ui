@@ -12,8 +12,9 @@
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
     "docs:serve": "pnpm -C docs serve",
-    "test": "vitest",
-    "test:run": "vitest run",
+    "test": "cd packages/components & pnpm vitest",
+    "test:run": "cd packages/components & pnpm vitest run",
+    "coverage": "cd packages/components & pnpm vitest run --coverage",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -39,15 +40,21 @@
     "@bear-ui/eslint-config": "workspace:*",
     "@types/node": "^18.11.18",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-c8": "^0.28.4",
+    "@vue/test-utils": "^2.2.10",
+    "c8": "^7.12.0",
     "commitizen": "^4.2.6",
     "cz-git": "^1.4.1",
     "eslint": "^8.32.0",
+    "happy-dom": "^8.2.6",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "sass": "^1.57.1",
     "unplugin-vue-define-options": "^0.6.2",
     "vite": "^4.0.0",
-    "vitest": "^0.27.2"
+    "vite-plugin-dts": "^1.7.2",
+    "vitest": "^0.27.3"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
