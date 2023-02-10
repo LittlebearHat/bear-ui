@@ -6,10 +6,11 @@ import BDrawer from '@bear-ui/components/drawer'
 
 <script>
 import BDrawer from '@bear-ui/components/drawer'
-// import BModal from '@bear-ui/components/modal'
+import BModal from '@bear-ui/components/modal'
 export default {
   components: {
     BDrawer,
+    BModal
   },
   data() {
     return {
@@ -17,6 +18,7 @@ export default {
       isShowDrawer2: false,
       isShowDrawer3: false,
       isShowDrawer4: false,
+      isShowModal: false,
     };
   },
   methods: {
@@ -54,7 +56,44 @@ export default {
   <b-icon>
     <AddCircle></AddCircle>
   </b-icon> -->
-  <b-modal></b-modal>
+  <b-modal 
+    v-model:is-show-modal="isShowModal"
+    title="设置标题"
+    :show-close-icon="true"
+
+    :mask="true"
+    :click-mask-close="true"
+  >
+    <!-- 要与组件的具名插槽对应 -->
+    <template #head>
+      具名插槽
+    </template>
+    <template>
+      默认插槽
+    </template>
+    <!-- 要与子组件的插槽对应 -->
+    <template #footer>
+      <button
+        size="small"
+        @click="isShowModal = false"
+      >
+        取消
+      </button>
+      <button
+        type="primary"
+        size="small"
+        @click="isShowModal = false"
+      >
+        确认
+      </button>
+    </template>
+  </b-modal>
+  <button
+    type="primary"
+    @click="isShowModal = true"
+  >
+    打开弹框
+  </button>
   <div>测试环境</div>
   <b-drawer
     v-model:is-show-drawer="isShowDrawer1"

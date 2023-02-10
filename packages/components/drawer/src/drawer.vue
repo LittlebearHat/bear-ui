@@ -1,7 +1,7 @@
 <template>
   <!-- 抽屉打开关闭过渡效果根据name去指定computedName.moveObj -->
   <transition :name="computedName.moveObj">
-    <!-- clickMaskCloseFn搭配@click.stop :class="[bem.e('wapper'),{ isShowDrawerMask: mask }]  :class="bem.e('wapper')"-->
+    <!-- clickMaskCloseFn搭配@click.stop -->
     <div
       v-show="isShowDrawer"
       :class="[bem.b(),{ isShowDrawerMask: mask }]"
