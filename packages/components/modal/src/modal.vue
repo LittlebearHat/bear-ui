@@ -25,8 +25,8 @@
           </i>
         </div>
         <div class="bodybody">
-          <!-- 内容区我们使用默认插槽 -->
-          <slot></slot>
+          <!-- 内容区我们也使用命名插槽 -->
+          <slot name="body"></slot>
         </div>
         <div class="footfoot">
           <!-- 底部使用命名插槽 -->

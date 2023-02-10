@@ -68,8 +68,14 @@ export default {
     <template #head>
       具名插槽
     </template>
-    <template>
-      默认插槽
+    <template #body>
+      <button
+        type="success"
+        plain
+        @click="rightOpen"
+      >
+        右侧弹出
+      </button>
     </template>
     <!-- 要与子组件的插槽对应 -->
     <template #footer>
