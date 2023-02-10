@@ -1,6 +1,6 @@
 import { isBoolean } from '@bear-ui/utils'
 import { ExtractPropTypes, InjectionKey, PropType, SetupContext } from 'vue'
-type Key = number | string
+export type Key = number | string
 export interface TreeNode extends Required<TreeOption> {
   level: number
   rawNode: TreeOption
