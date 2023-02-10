@@ -1,0 +1,150 @@
+@use 'mixins/mixins.scss' as *;
+// @keyframes transform {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+// @include b(icon) {
+//   display: inline-flex;
+//   height: 1em;
+//   width: 1em;
+//   line-height: 1em;
+//   justify-content: center;
+//   align-items: center;
+//   vertical-align: middle;
+//   svg.loading {
+//     animation: transform 1s linear infinite;
+//   }
+// }
+// @include b('drawer'){
+//   position: fixed;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     z-index: 999;
+//     overflow: hidden;
+  // @include e('wrap'){
+  //   position: fixed;
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 999;
+  //   overflow: hidden;
+  // }
+// }
+@include b('drawer') {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+  @include e('content') {
+    // 搭配定位的方式控制在上下左右的那个方位
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    // 抽屉头部
+    .drawerHeader {
+      width: 100%;
+      height: 48px;
+      box-sizing: border-box;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bolder;
+      color: #333;
+      i {
+        cursor: pointer;
+      }
+    }
+    // 抽屉内容体部分
+    .drawerBody {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      flex: 1;
+      overflow-y: auto;
+    }
+  }
+}
+// 遮罩层即为背景色
+.isShowDrawerMask {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/*
+  下方是抽屉过渡动画
+*/
+// 上方进入和退出
+.topMove-enter-active,
+.topMove-leave-active {
+  transition: all 0.36s ease-in-out;
+  transform: translateY(0%);
+  opacity: 1;
+}
+.topMove-enter,
+.topMove-leave {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.topMove-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+// 下方进入和退出
+.bottomMove-enter-active,
+.bottomMove-leave-active {
+  transition: all 0.36s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+}
+.bottomMove-enter,
+.bottomMove-leave {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.bottomMove-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+// 左侧进入和退出
+.leftMove-enter-active,
+.leftMove-leave-active {
+  transition: all 0.36s ease-in-out;
+  transform: translateX(0%);
+  opacity: 1;
+}
+.leftMove-enter,
+.leftMove-leave {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.leftMove-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+// 右侧进入和退出
+.rightMove-enter-active,
+.rightMove-leave-active {
+  transition: all 0.36s ease-in-out;
+  transform: translateX(0);
+  opacity: 1;
+}
+.rightMove-enter,
+.rightMove-leave {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.rightMove-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
