@@ -144,7 +144,7 @@ function triggerLoading(node: TreeNode) {
       loadingKeys.add(node.key)
       const onLoad = props.onLoad
       if (onLoad) {
-        onLoad(node.rawNode).then(children => {
+        onLoad(node.rawNode).then((children: TreeNode) => {
           // console.log('111', children)
           node.rawNode.children = children
           node.children = createTree(children, node)
@@ -225,7 +225,7 @@ function toggle(node: TreeNode, checked: boolean) {
   checkKeys[checked ? 'add' : 'delete'](node.key)
   const children = node.children
   if (children) {
-    children.forEach(childNode => {
+    children.forEach((childNode: any) => {
       if (!childNode.disabled) {
         toggle(childNode, checked)
       }
