@@ -1,6 +1,7 @@
 import MarkdownItContainer from 'markdown-it-container'
 import MarkdownIt from 'markdown-it'
 import type { Token } from 'markdown-it'
+import { tablePlugin } from './table'
 
 const markdown: MarkdownIt = MarkdownIt({
   breaks: true
@@ -13,6 +14,7 @@ const markdown: MarkdownIt = MarkdownIt({
  */
 export const mdPlugin = (md: MarkdownIt) => {
   /** 使用表格插件 */
+  md.use(tablePlugin)
 
   /** 自定义 md 语法 */
   md.use(MarkdownItContainer, 'demo', {
