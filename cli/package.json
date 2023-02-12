@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd ./src/index.ts create",
+    "dev": "tsc --watch",
+    "cli": "node ./build/src/index.js create",
     "build": "tsc"
   },
   "keywords": [],
