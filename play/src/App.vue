@@ -58,7 +58,10 @@ console.log('tree', data)
 </script>
 
 <template>
-  <b-icon :color="'red'">
+  <b-icon
+    :color="'red'"
+    size="20"
+  >
     <AddCircle></AddCircle>
   </b-icon>
   <b-icon>

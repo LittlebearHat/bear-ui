@@ -17,5 +17,8 @@
   "keywords": [
     "bear-ui",
     "vue3组件库"
-  ]
+  ],
+  "devDependencies": {
+    "@vue/test-utils": "^2.2.10"
+  }
 }

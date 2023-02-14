@@ -38,7 +38,9 @@ $ pnpm install @vicons/ionicons5
   <CashOutline />
 </BIcon>
 ```
+
 :::
+
 ## API
 
 ### Icon Props
