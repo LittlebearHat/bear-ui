@@ -6,7 +6,7 @@ export default {
 function getExampleSidebar() {
   return [
     {
-      text: '组件',
+      text: '通用组件',
       items: [
         {
           text: 'Button 按钮',
@@ -15,6 +15,50 @@ function getExampleSidebar() {
         {
           text: 'Icon 图标',
           link: '/examples/icon'
+        },
+        {
+          text: 'Tree 树组件',
+          link: '/examples/tree'
+        }
+      ]
+    },
+    {
+      text: '布局组件',
+      items: [
+        {
+          text: '111'
+        }
+      ]
+    },
+    {
+      text: '导航组件',
+      items: [
+        {
+          text: '111'
+        }
+      ]
+    },
+    {
+      text: '数据录入组件',
+      items: [
+        {
+          text: '111'
+        }
+      ]
+    },
+    {
+      text: '数据展示组件',
+      items: [
+        {
+          text: '111'
+        }
+      ]
+    },
+    {
+      text: '反馈组件',
+      items: [
+        {
+          text: '111'
         }
       ]
     }

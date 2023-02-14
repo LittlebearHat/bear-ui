@@ -99,7 +99,7 @@ watch(
   () => props.data,
   (data: TreeOption[]) => {
     tree.value = createTree(data)
-    console.log(tree.value)
+    //console.log(tree.value)
   },
   { immediate: true }
 )
@@ -170,7 +170,7 @@ function toggleExpand(node: TreeNode) {
 }
 const emit = defineEmits(treeEmitts)
 const selectKeysRef = ref<Key[]>([])
-console.log(selectKeysRef.value)
+//console.log(selectKeysRef.value)
 
 watch(
   () => props.selectedKeys,
@@ -217,7 +217,7 @@ function isIndeterminate(node: TreeNode) {
 }
 function toggle(node: TreeNode, checked: boolean) {
   if (!node) return
-  console.log('gouuxuan', checkedKeysRefs, checked)
+  // console.log('gouuxuan', checkedKeysRefs, checked)
   const checkKeys = checkedKeysRefs.value
   if (checked) {
     indeterminateKeySet.value.delete(node.key)
@@ -272,8 +272,8 @@ function updateCheckedKeys(node: TreeNode) {
 }
 
 function toggleCheck(node: TreeNode, checked: boolean) {
-  console.log(flattenTree)
-  console.log(node, checked)
+  // console.log(flattenTree)
+  //console.log(node, checked)
   toggle(node, checked)
   updateCheckedKeys(node)
 }
