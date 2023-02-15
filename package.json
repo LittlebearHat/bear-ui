@@ -16,7 +16,8 @@
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
     "docs:serve": "pnpm -C docs serve",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cli": "pnpm -C cli cli"
   },
   "keywords": [],
   "author": "",
