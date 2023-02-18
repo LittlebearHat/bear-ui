@@ -60,10 +60,10 @@ export default defineConfig({
     // })
   ],
   test: {
-    globals: true,
-    environment: 'happy-dom',
-    transformMode: {
-      web: [/.[tj]sx$/]
-    }
+    // globals: true,
+    environment: 'happy-dom'
+    // transformMode: {
+    //   web: [/.[tj]sx$/]
+    // }
   }
 })
