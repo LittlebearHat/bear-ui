@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 // import dts from 'vite-plugin-dts'
 
 export default defineConfig({
@@ -48,7 +49,8 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue()
+    vue(),
+    vueJsx()
     // dts({
     //   //指定使用的tsconfig.json为整个项目根目录下掉,
     //   tsConfigFilePath: '../../tsconfig.json'

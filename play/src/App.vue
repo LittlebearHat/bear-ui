@@ -1,10 +1,12 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
-// console.log(Icon);
+
 import { ref } from 'vue'
 import BIcon from '@bear-ui/components/icon'
+import BAvatar from '@bear-ui/components/avatar'
 import { AddCircle } from '@vicons/ionicons5'
-import { TreeOption, Key } from '@bear-ui/components/tree'
-// console.log(BIcon)
+import { Key } from '@bear-ui/components/tree'
+
 function createData(level = 4, parentKey = ''): any {
   if (!level) return []
   const arr = new Array(6 - level).fill(0)
@@ -54,7 +56,6 @@ const data = ref(createData())
 // ])
 
 const value = ref<Key[]>([])
-console.log('tree', data)
 </script>
 
 <template>
@@ -67,6 +68,12 @@ console.log('tree', data)
   <b-icon>
     <AddCircle></AddCircle>
   </b-icon>
+  <b-button type="primary">
+    primary
+  </b-button>
+  <b-button size="large">
+    large default
+  </b-button>
   <b-tree
     v-model:selected-keys="value"
     :data="data"
@@ -79,6 +86,21 @@ console.log('tree', data)
     :indeterminate="true"
     label="节点"
   ></b-checkbox>
+  <b-avatar
+    src="/vite.svg"
+    size="large"
+    alt="large"
+  />
+  <b-avatar
+    src="/vite.svg"
+    shape="square"
+    alt="deflaut"
+  />
+  <b-avatar
+    src="/vite.svg"
+    size="small"
+    alt="small"
+  />
 </template>
 
 <style scoped></style>

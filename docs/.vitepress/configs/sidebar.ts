@@ -26,7 +26,8 @@ function getExampleSidebar() {
       text: '布局组件',
       items: [
         {
-          text: '111'
+          text: 'Switch 开关',
+          link: '/examples/switch'
         }
       ]
     },
@@ -42,7 +43,16 @@ function getExampleSidebar() {
       text: '数据录入组件',
       items: [
         {
-          text: '111'
+          text: 'Form 表单',
+          link: '/examples/form'
+        },
+        {
+          text: 'Upload 上传',
+          link: '/examples/upload'
+        },
+        {
+          text: 'Progress 进度条',
+          link: '/examples/progress'
         }
       ]
     },
@@ -50,7 +60,8 @@ function getExampleSidebar() {
       text: '数据展示组件',
       items: [
         {
-          text: '111'
+          text: 'Avatar 头像',
+          link: '/examples/avatar'
         }
       ]
     },
