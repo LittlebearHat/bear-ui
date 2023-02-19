@@ -197,5 +197,11 @@ export default {
 
 | 名称  | 类型             | 默认值    | 说明     |
 | ----- | ---------------- | --------- | -------- |
-| color | string           | undefined | 图标颜色 |
-| size  | number \| string | undefined | 图片大小 |
+| isShowDrawer   | Boolean   | false | 是否显示抽屉 |
+| isShowHeader   | Boolean   | false | 是否显示抽屉头部内容 |
+| title          | String    | undefined | 父组件传过来的抽屉标题值 |
+| showCloseIcon  | Boolean   | false | 是否显示关闭小图标 |
+| mask           | Boolean   | false | 是否开启抽屉背景遮罩层 |
+| clickMaskClose | Boolean   | false | 点击遮罩层关闭 |
+| direction      | String    | undefined | 抽屉的4个方向 |
+| beforeClose    | Function  | undefined | 接收父组件传递过来的关闭函数，会中断关闭抽屉的操作 |
