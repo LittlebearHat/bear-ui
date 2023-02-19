@@ -75,12 +75,11 @@ $ pnpm install @vicons/ionicons5
   右侧弹出
 </button>
 
-
 <script>
 import BDrawer from '@bear-ui/components/drawer'
 export default {
   components: {
-    BDrawer
+    BDrawer,
   },
   data() {
     return {
@@ -88,7 +87,6 @@ export default {
       isShowDrawer2: false,
       isShowDrawer3: false,
       isShowDrawer4: false,
-      isShowModal: false,
     };
   },
   methods: {
@@ -118,6 +116,9 @@ export default {
 };
 </script>
 
+
+<details>
+<summary>复制代码</summary>
 
 ```vue
 <template>
@@ -188,6 +189,7 @@ export default {
   </button>
 </template>
 ```
+</details>
 
 ## API
 
