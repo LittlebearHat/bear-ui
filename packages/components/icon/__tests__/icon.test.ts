@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import BIcon from '@bear-ui/components/icon'
+import BIcon from '@bear-ui/components/icon/src/icon.vue'
 describe('Icon.vue', () => {
   test('render', () => {
     const wrapper = mount(BIcon, {
@@ -8,7 +8,6 @@ describe('Icon.vue', () => {
         color: 'red'
       }
     })
-    //console.log(wrapper)
     expect(wrapper.element.getAttribute('style')).toContain('color: red')
   })
   test('render11', () => {
@@ -17,7 +16,6 @@ describe('Icon.vue', () => {
         size: '18px'
       }
     })
-    //console.log(wrapper)
     expect(wrapper.element.getAttribute('style')).toContain('font-size: 18px')
   })
 })
