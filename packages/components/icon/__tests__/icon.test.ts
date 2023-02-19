@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
 import BIcon from '@bear-ui/components/icon/src/icon.vue'
 describe('Icon.vue', () => {
-  test('render', () => {
+  it('render', () => {
     const wrapper = mount(BIcon, {
       props: {
         color: 'red'
@@ -10,7 +10,7 @@ describe('Icon.vue', () => {
     })
     expect(wrapper.element.getAttribute('style')).toContain('color: red')
   })
-  test('render11', () => {
+  it('render11', () => {
     const wrapper = mount(BIcon, {
       props: {
         size: '18px'
