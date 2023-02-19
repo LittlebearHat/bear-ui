@@ -111,10 +111,14 @@ importers:
 
   packages/components:
     specifiers:
+      '@bear-ui/hooks': workspace:*
+      '@bear-ui/utils': workspace:*
       '@vue/test-utils': ^2.2.10
       happy-dom: ^8.3.2
       jsdom: ^21.1.0
     dependencies:
+      '@bear-ui/hooks': link:../hooks
+      '@bear-ui/utils': link:../utils
       happy-dom: 8.3.2
       jsdom: 21.1.0
     devDependencies:

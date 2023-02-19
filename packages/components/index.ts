@@ -1,5 +1,7 @@
 export * from './icon'
 export * from './avatar'
+export * from './tree'
+export * from './pagination'
 
 import BAvatar from '@bear-ui/components/avatar'
 import BIcon from '@bear-ui/components/icon'
@@ -10,3 +12,4 @@ import BPagination from '@bear-ui/components/pagination'
 const plugins = [BAvatar, BIcon, BTree, BCheckBox, BPagination]
 
 export default plugins
+
