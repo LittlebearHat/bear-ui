@@ -35,7 +35,12 @@ function getExampleSidebar() {
       text: '导航组件',
       items: [
         {
-          text: '111'
+          text: 'Menu 菜单',
+          link: '/examples/menu'
+        },
+        {
+          text: 'Dropdown 下拉菜单',
+          link: '/examples/dropdown'
         }
       ]
     },

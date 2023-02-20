@@ -1,7 +1,6 @@
 <template>
   <div v-show="showDropdown" :class="[bem.b()]">
     <slot @close="closeList"></slot>
-    <b-dropdown-item @close="closeList">Action 1</b-dropdown-item>
   </div>
 </template>
 

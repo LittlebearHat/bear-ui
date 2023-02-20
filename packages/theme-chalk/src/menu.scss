@@ -2,9 +2,11 @@
 @use 'common/var' as *;
 
 @include b('menu') {
+  background-color: rgb(240, 240, 240);
+  display: flex;
   height: 50px;
   width: 100%;
-  // background-color: pink;
+
   text-align: center;
   border-bottom: 1px solid rgb(167, 167, 167);
 
@@ -20,9 +22,9 @@
 }
 
 @include b('menu-item') {
+  display: block;
   line-height: 50px;
-  margin: 0 30px;
-  padding: 0 10px;
+  padding: 0 20px;
   &:hover {
     color: rgb(42, 158, 208);
     border-bottom: 2px solid rgb(42, 158, 208);
@@ -34,10 +36,9 @@
 }
 
 @include b('sub-menu') {
-  line-height: 50px;
-
-  margin: 0px 30px;
   @include e('title') {
+    line-height: 50px;
+    padding: 0 20px;
     &:hover {
       color: rgb(42, 158, 208);
       border-bottom: 2px solid rgb(42, 158, 208);
@@ -48,6 +49,9 @@
     }
   }
   @include e('submenu') {
+    z-index: 999;
+    background-color: #fff;
+    display: block;
     margin-top: 10px;
     box-shadow: 1px 1px 1px 1px rgb(180, 179, 179);
     font-size: 14px;

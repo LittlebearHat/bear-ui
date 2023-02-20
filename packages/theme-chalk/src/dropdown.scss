@@ -1,14 +1,17 @@
 @use 'mixins/mixins' as *;
 @use 'common/var' as *;
 
-@include b(dropdown) {
+@include b('dropdown') {
+  display: inline-block;
+  padding: 10px;
+
   @include e('link') {
     // background-color: pink;
     padding: 5px;
     border: solid 1px skyblue;
+    border-radius: 10% 10%;
     text-align: center;
     font-size: 16px;
-    border-radius: 20%;
   }
   .v-enter-active,
   .v-leave-active {
@@ -22,12 +25,15 @@
 }
 
 @include b('dropdown-menu') {
+  text-align: center;
+
   border: solid 1px skyblue;
   font-size: 14px;
   margin-top: 10px;
 }
 
 @include b('dropdown-item') {
+  padding: 0 10px;
   &:hover {
     background-color: skyblue;
     color: white;
