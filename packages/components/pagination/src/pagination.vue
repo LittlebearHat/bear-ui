@@ -4,7 +4,7 @@
       :disabled="disablePrev"
       @click="prevPage"
     >
-      上一页
+      &lt;
     </button>
     <Pager
       ref="pager"
@@ -16,7 +16,7 @@
       :disabled="disableNext"
       @click="nextPage"
     >
-      下一页
+      >
     </button>
   </div>
 </template>
