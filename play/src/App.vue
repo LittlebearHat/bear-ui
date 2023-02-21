@@ -1,18 +1,21 @@
-<script setup lang="ts">
-// console.log(Icon);
-import BIcon from '@bear-ui/components/icon'
-import { AddCircle } from '@vicons/ionicons5'
-console.log(BIcon)
-</script>
-
 <template>
-  <b-icon :color="'red'">
-    <AddCircle></AddCircle>
-  </b-icon>
-  <b-icon>
-    <AddCircle></AddCircle>
-  </b-icon>
-  <div>测试环境</div>
+  <button
+    type="submit"
+    @click="onClickVisible"
+  >
+    Modal
+  </button>
+  <b-modal
+    :visible="visibleRef"
+    title="bearUI：modal"
+    width="500px"
+    @cancel="onClickCancel"
+    @confirm="onClickConfirm"
+  >
+    <template #default>
+      <div><button>contain</button></div>
+    </template>
+  </b-modal>
 </template>
 
 <style scoped></style>

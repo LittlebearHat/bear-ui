@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import '@bear-ui/theme-chalk/src/index.scss'
-
+import BDrawer from '@bear-ui/components/drawer'
+import BModal from '@bear-ui/components/modal'
 import BIcon from '@bear-ui/components/icon'
 import BDrawer from '@bear-ui/components/drawer'
 import BModal from '@bear-ui/components/modal'
