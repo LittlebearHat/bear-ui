@@ -1,59 +1,18 @@
-<template>
-  <button
-    type="submit"
-    @click="onClickVisible"
-  >
-    Modal
-  </button>
-  <b-modal
-    :visible="visibleRef"
-    title="bearUI：modal"
-    width="500px"
-    @cancel="onClickCancel"
-    @confirm="onClickConfirm"
-  >
-    <template #default>
-      <div><button>contain</button></div>
-    </template>
-  </b-modal>
-</template>
-
 <script setup lang="ts">
-import { ref } from 'vue'
-import BModal from '@bear-ui/components/modal'
-const visibleRef = ref(false)
-function onClickVisible () {
-  visibleRef.value = !visibleRef.value
-}
-function onClickCancel () {
-  visibleRef.value = !visibleRef.value
-}
-function onClickConfirm () {
-  visibleRef.value = !visibleRef.value
-}
+// console.log(Icon);
+import BIcon from '@bear-ui/components/icon'
+import { AddCircle } from '@vicons/ionicons5'
+console.log(BIcon)
 </script>
 
-<!-- <script>
-import BModal from '@bear-ui/components/modal'
-export default{
-  components: {
-    BModal
-  },
-  data() {
-    return {
-      visibleRef: false,
-    };
-  },
-  methods:{
-    onClickVisible () {
-      this.visibleRef = !this.visibleRef
-    },
-    onClickCancel () {
-      this.visibleRef = !this.visibleRef
-    },
-    onClickConfirm () {
-      this.visibleRef = !this.visibleRef
-    }
-  }
-};
-</script> -->
+<template>
+  <b-icon :color="'red'">
+    <AddCircle></AddCircle>
+  </b-icon>
+  <b-icon>
+    <AddCircle></AddCircle>
+  </b-icon>
+  <div>测试环境</div>
+</template>
+
+<style scoped></style>

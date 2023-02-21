@@ -3,7 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "keywords": [
+    "bear-ui",
+    "vue3组件库"
+  ],
+  "devDependencies": {
+    "@vue/test-utils": "^2.2.10"
+  },
+  "dependencies": {
+    "happy-dom": "^8.3.2",
+    "jsdom": "^21.1.0",
+    "@bear-ui/utils": "workspace:*",
+    "@bear-ui/hooks": "workspace:*"
+  }
 }
