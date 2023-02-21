@@ -16,11 +16,21 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7.2.1
+      # 安装依赖
       - name: Install modules
         run: pnpm install
+      # 组件库打包测试
       - name: Build
         run: pnpm build
+      # 组件库Vitest测试
+      # - name: Vitest Test
+      #   run: pnpm test:run
+      # # 组件库Vitest coverage测试覆盖率报告
+      # - name: Vitest Test
+      #   run: pnpm coverage
+      # 演示demo打包测试
+      - name: Build Play
+        run: pnpm play:build
+      # 组件库文档打包测试
       - name: Build Docs
         run: pnpm docs:build
-      # - name: Serve Docs
-      #   run: pnpm docs:serve

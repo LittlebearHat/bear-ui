@@ -6,7 +6,7 @@ export default {
 function getExampleSidebar() {
   return [
     {
-      text: '组件',
+      text: '通用组件',
       items: [
         {
           text: 'Button 按钮',
@@ -23,6 +23,66 @@ function getExampleSidebar() {
         {
           text: 'Modal 对话框',
           link: '/examples/modal'
+        },
+        {
+          text: 'Tree 树组件',
+          link: '/examples/tree'
+        }
+      ]
+    },
+    {
+      text: '布局组件',
+      items: [
+        {
+          text: 'Switch 开关',
+          link: '/examples/switch'
+        }
+      ]
+    },
+    {
+      text: '导航组件',
+      items: [
+        {
+          text: 'Menu 菜单',
+          link: '/examples/menu'
+        },
+        {
+          text: 'Dropdown 下拉菜单',
+          link: '/examples/dropdown'
+        }
+      ]
+    },
+    {
+      text: '数据录入组件',
+      items: [
+        {
+          text: 'Form 表单',
+          link: '/examples/form'
+        },
+        {
+          text: 'Upload 上传',
+          link: '/examples/upload'
+        },
+        {
+          text: 'Progress 进度条',
+          link: '/examples/progress'
+        }
+      ]
+    },
+    {
+      text: '数据展示组件',
+      items: [
+        {
+          text: 'Avatar 头像',
+          link: '/examples/avatar'
+        }
+      ]
+    },
+    {
+      text: '反馈组件',
+      items: [
+        {
+          text: '111'
         }
       ]
     }

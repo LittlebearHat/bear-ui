@@ -1,0 +1,47 @@
+@use 'mixins/mixins'as *;
+@use 'common/var'as *;
+
+@include b(avatar) {
+  // BEM规范
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+
+  color: white;
+  background-color: white;
+  width: $size-default;
+  height: $size-default;
+  font-size: 14px;
+
+  >img {
+    display: block;
+    height: 100%;
+  }
+
+  @include m(circle) {
+    border-radius: 50%;
+  }
+
+  @include m(square) {
+    border-radius: 4px, ;
+  }
+
+  @include m(icon) {
+    font-size: 14px,
+  }
+
+  @include m(large) {
+    font-size: 14px;
+    width: $size-large;
+    height: $size-large;
+  }
+
+  @include m(small) {
+    font-size: 14px;
+    width: $size-small;
+    height: $size-small;
+  }
+}

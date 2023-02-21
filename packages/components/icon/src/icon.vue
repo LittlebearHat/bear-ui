@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { createNamespace } from '@bear-ui/hooks/use-namespace'
+import { createNamespace } from '@bear-ui/hooks'
 import { iconProps } from './icon'
 import { computed } from 'vue'
 import type { CSSProperties } from 'vue'
@@ -18,7 +18,7 @@ defineOptions({
   name: 'b-icon'
 })
 const bem = createNamespace('icon')
-console.log(bem)
+//console.log(bem)
 const props = defineProps(iconProps)
 const style = computed<CSSProperties>(() => {
   const { size, color } = props

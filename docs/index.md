@@ -1,13 +1,13 @@
 ---
 layout: home
 
-title: Bear-UI
-titleTemplate: 一个基于 Vue3 + Ts 的组件库
+title: BEAR-UI
+titleTemplate: 一个基于 Vue3 + TypeScript 的轻量级组件库
 
 hero:
-  name: bear-ui 组件库
-  text: Vue3 + Ts 组件库
-  tagline: 轻量、高质量
+  name: BEAR  UI 组件库
+  text: Vue3 + TypeScript轻量级组件库
+  tagline: 刚刚起步，不喜勿喷
   image:
     src: /logo.svg
     alt: bear-ui

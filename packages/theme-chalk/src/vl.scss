@@ -3,7 +3,7 @@
 @include b(vl) {
   overflow-y: scroll;
   position: relative;
-  border: 2px solid red;
+  //border: 2px solid;
   @include e('scroll-list') {
     position: absolute;
     top: 0;
