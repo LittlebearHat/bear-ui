@@ -1,10 +1,5 @@
 # Drawer 抽屉
 
-
-```bash
-$ pnpm install @vicons/ionicons5
-```
-
 ## 使用抽屉
 
 - 如果你想像用例一样直接使用，你需要全局注册组件，才能够直接在项目里使用。
