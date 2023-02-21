@@ -17,6 +17,14 @@ function getExampleSidebar() {
           link: '/examples/icon'
         },
         {
+          text: 'Drawer 抽屉',
+          link: '/examples/drawer'
+        },
+        {
+          text: 'Modal 对话框',
+          link: '/examples/modal'
+        },
+        {
           text: 'Tree 树组件',
           link: '/examples/tree'
         }

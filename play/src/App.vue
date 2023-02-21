@@ -1,106 +1,59 @@
-<!-- eslint-disable @typescript-eslint/no-explicit-any -->
-<script setup lang="ts">
-
-import { ref } from 'vue'
-import BIcon from '@bear-ui/components/icon'
-import BAvatar from '@bear-ui/components/avatar'
-import { AddCircle } from '@vicons/ionicons5'
-import { Key } from '@bear-ui/components/tree'
-
-function createData(level = 4, parentKey = ''): any {
-  if (!level) return []
-  const arr = new Array(6 - level).fill(0)
-  return arr.map((_, idx: number) => {
-    const key = parentKey + level + idx
-    return {
-      label: createLabel(level),
-      key,
-      children: createData(level - 1, key)
-    }
-  })
-}
-function createLabel(level: number): string {
-  if (level === 4) return '40'
-  if (level === 3) return '3'
-  if (level === 2) return '2'
-  if (level === 1) return '1'
-  return ''
-}
-const data = ref(createData())
-// const data = ref<TreeOption[]>([
-//   {
-//     key: '0',
-//     label: '0',
-//     children: [
-//       {
-//         key: '0-0',
-//         label: '0-0'
-//       },
-//       {
-//         disabled: true,
-//         key: '0-1',
-//         label: '0-1',
-//         children: [
-//           {
-//             label: '0-1-0',
-//             key: '0-1-0'
-//           },
-//           {
-//             label: '0-1-1',
-//             key: '0-1-1'
-//           }
-//         ]
-//       }
-//     ]
-//   }
-// ])
-
-const value = ref<Key[]>([])
-</script>
-
 <template>
-  <b-icon
-    :color="'red'"
-    size="20"
+  <button
+    type="submit"
+    @click="onClickVisible"
   >
-    <AddCircle></AddCircle>
-  </b-icon>
-  <b-icon>
-    <AddCircle></AddCircle>
-  </b-icon>
-  <b-button type="primary">
-    primary
-  </b-button>
-  <b-button size="large">
-    large default
-  </b-button>
-  <b-tree
-    v-model:selected-keys="value"
-    :data="data"
-    selectable
-    show-checkbox
-    :default-checked-keys="['40']"
-  ></b-tree>
-  <b-checkbox
-    :disabled="false"
-    :indeterminate="true"
-    label="节点"
-  ></b-checkbox>
-  <b-avatar
-    src="/vite.svg"
-    size="large"
-    alt="large"
-  />
-  <b-avatar
-    src="/vite.svg"
-    shape="square"
-    alt="deflaut"
-  />
-  <b-avatar
-    src="/vite.svg"
-    size="small"
-    alt="small"
-  />
+    Modal
+  </button>
+  <b-modal
+    :visible="visibleRef"
+    title="bearUI：modal"
+    width="500px"
+    @cancel="onClickCancel"
+    @confirm="onClickConfirm"
+  >
+    <template #default>
+      <div><button>contain</button></div>
+    </template>
+  </b-modal>
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+import { ref } from 'vue'
+import BModal from '@bear-ui/components/modal'
+const visibleRef = ref(false)
+function onClickVisible () {
+  visibleRef.value = !visibleRef.value
+}
+function onClickCancel () {
+  visibleRef.value = !visibleRef.value
+}
+function onClickConfirm () {
+  visibleRef.value = !visibleRef.value
+}
+</script>
+
+<!-- <script>
+import BModal from '@bear-ui/components/modal'
+export default{
+  components: {
+    BModal
+  },
+  data() {
+    return {
+      visibleRef: false,
+    };
+  },
+  methods:{
+    onClickVisible () {
+      this.visibleRef = !this.visibleRef
+    },
+    onClickCancel () {
+      this.visibleRef = !this.visibleRef
+    },
+    onClickConfirm () {
+      this.visibleRef = !this.visibleRef
+    }
+  }
+};
+</script> -->
