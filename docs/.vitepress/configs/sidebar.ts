@@ -78,8 +78,13 @@ function getExampleSidebar() {
       text: '反馈组件',
       items: [
         {
-          text: '开发中'
-        }
+          text: 'Drawer 抽屉',
+          link: '/examples/drawer'
+        },
+        {
+          text: 'Modal 对话框',
+          link: '/examples/modal'
+        },
       ]
     }
   ]

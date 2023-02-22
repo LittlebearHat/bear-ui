@@ -13,6 +13,8 @@ dist-ssr
 *.local
 *.eslintcache
 cache
+pnpm-workspace.yaml
+pnpm-lock.yaml
 
 # Editor directories and files
 .vscode/*
@@ -26,6 +28,6 @@ cache
 *.sw?
 */dist
 */cache
-*/es
+*.yaml*/es
 */lib
 */coverage

@@ -1,4 +1,5 @@
 export * from './icon'
+export * from './drawer'
 export * from './avatar'
 export * from './tree'
 export * from './pagination'
