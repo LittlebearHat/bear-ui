@@ -12,7 +12,7 @@ import {
   BDropdownItem,
   BDropdownMenu
 } from '@bear-ui/components/dropdown'
-
+import BPagination from '@bear-ui/components/pagination'
 export function useComponents(app) {
   app.component('BAvatar', BAvatar)
   app.component('BIcon', BIcon)
@@ -23,7 +23,7 @@ export function useComponents(app) {
   app.component('BDropdown', BDropdown)
   app.component('BDropdownItem', BDropdownItem)
   app.component('BDropdownMenu', BDropdownMenu)
-
+  app.component('BPagination', BPagination)
   app.component('BDemo', bDemo)
   app.component('AddCircle', AddCircle)
   app.component('CashOutline', CashOutline)

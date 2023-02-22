@@ -74,15 +74,6 @@ const sourceArticles = ref([
     ctime: '1638507790', // 创建时间
     digg_count: 161, // 点赞数
     view_count: 8561 // 阅读数
-  },
-  {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
   }
 ])
 const pageIndex = ref(1)
@@ -103,6 +94,7 @@ console.log('tree', data)
     selectable
     show-checkbox
     :default-checked-keys="['40']"
+    multiple="true"
   ></b-tree>
   <b-checkbox
     :disabled="false"
@@ -110,11 +102,7 @@ console.log('tree', data)
     label="节点"
   ></b-checkbox>
   <div class="essays-container">
-    <a
-      v-for="article of articles"
-      :href="`http://juejin.cn/post/${article.article_id}`"
-      target="_blank"
-    >
+    <a v-for="article of articles">
       <div class="essay-list">
         <div class="first-line">
           <span class="title">{{ article.title }}</span>
