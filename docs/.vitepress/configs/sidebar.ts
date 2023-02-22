@@ -15,10 +15,6 @@ function getExampleSidebar() {
         {
           text: 'Icon 图标',
           link: '/examples/icon'
-        },
-        {
-          text: 'Tree 树组件',
-          link: '/examples/tree'
         }
       ]
     },
@@ -41,6 +37,10 @@ function getExampleSidebar() {
         {
           text: 'Dropdown 下拉菜单',
           link: '/examples/dropdown'
+        },
+        {
+          text: 'Pagination 分页',
+          link: '/examples/pagination'
         }
       ]
     },
@@ -67,6 +67,10 @@ function getExampleSidebar() {
         {
           text: 'Avatar 头像',
           link: '/examples/avatar'
+        },
+        {
+          text: 'Tree 树组件',
+          link: '/examples/tree'
         }
       ]
     },
@@ -105,8 +109,7 @@ function getGuideSidebar() {
       text: '进阶',
       items: [
         {
-          text: 'xx',
-          link: '/xx'
+          text: '测试中'
         }
       ]
     }

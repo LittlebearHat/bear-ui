@@ -1,0 +1,12 @@
+@use 'mixins/mixins.scss' as *;
+@include b(popover) {
+  position: relative;
+  background-color: aqua;
+  //border: 2px solid;
+  @include e('scroll-list') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

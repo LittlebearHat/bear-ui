@@ -7,7 +7,7 @@ titleTemplate: 一个基于 Vue3 + TypeScript 的轻量级组件库
 hero:
   name: BEAR  UI 组件库
   text: Vue3 + TypeScript轻量级组件库
-  tagline: 刚刚起步，不喜勿喷
+  tagline: 持续维护，好起来了
   image:
     src: /logo.svg
     alt: bear-ui
