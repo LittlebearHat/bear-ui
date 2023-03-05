@@ -1,3 +1,7 @@
+<script setup>
+  import tree from './tree.vue'
+</script>
+
 # Tree 树
 
 划重点，通过树组件渲染原理我们可以学到虚拟 DOM 渲染方式
@@ -8,7 +12,19 @@
 :::demo
 
 <template #source>
-<b-tree :data="data" selectable show-checkbox :default-checked-keys="['40']" multiple="true"> </b-tree>
+<tree></tree>
+</template>
+
+```vue
+<template>
+  <b-tree
+    :data="data"
+    selectable
+    show-checkbox
+    :default-checked-keys="['40']"
+    multiple="true"
+  >
+  </b-tree>
 </template>
 
 <script setup>
@@ -35,6 +51,14 @@ function createLabel(level) {
 }
 const data = ref(createData())
 </script>
+```
+
+:::
+:::demo
+
+<template #source>
+<tree></tree>
+</template>
 
 ```vue
 <template>
