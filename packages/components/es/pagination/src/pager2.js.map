@@ -1,0 +1,1 @@
+{"version":3,"file":"pager2.js","sources":["../../../pagination/src/pager.ts"],"sourcesContent":["import { ExtractPropTypes } from 'vue'\nimport { paginationProps } from './pagination'\n\nexport const pagerProps = paginationProps\nexport type PagerProps = ExtractPropTypes<typeof pagerProps>\n"],"names":[],"mappings":";AAGO,MAAM,aAAa;"}

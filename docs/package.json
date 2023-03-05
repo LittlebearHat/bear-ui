@@ -15,7 +15,8 @@
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
     "unplugin-vue-define-options": "^0.6.2",
-    "vitepress": "1.0.0-alpha.40"
+    "vitepress": "1.0.0-alpha.45",
+    "vitepress-theme-demoblock": "^2.0.2"
   },
   "dependencies": {
     "vue": "^3.2.45"

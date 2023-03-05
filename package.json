@@ -7,9 +7,9 @@
   "scripts": {
     "commit": "git cz",
     "build": "pnpm -C packages/components build",
-    "test": "pnpm vitest",
+    "test": "pnpm run -C packages/components test",
     "test:run": "pnpm vitest run",
-    "coverage": "pnpm vitest run --coverage",
+    "coverage": "pnpm run -C packages/components coverage",
     "play:dev": "pnpm -C play dev",
     "play:build": "pnpm -C play build",
     "play:preview": "pnpm -C play preview",

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, test } from 'vitest'
-import BIcon from '@bear-ui/components/icon/src/icon.vue'
+import { describe, expect, it } from 'vitest'
+import BIcon from '../src/icon.vue'
 describe('Icon.vue', () => {
   it('render', () => {
     const wrapper = mount(BIcon, {

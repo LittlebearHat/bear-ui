@@ -70,7 +70,7 @@ function getExampleSidebar() {
         },
         {
           text: 'Tree 树组件',
-          link: '/examples/tree'
+          link: '/examples/tree/'
         }
       ]
     },
@@ -84,7 +84,7 @@ function getExampleSidebar() {
         {
           text: 'Modal 对话框',
           link: '/examples/modal'
-        },
+        }
       ]
     }
   ]
