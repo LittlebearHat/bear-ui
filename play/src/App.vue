@@ -8,95 +8,99 @@ import { AddCircle } from '@vicons/ionicons5'
 import { TreeOption, Key } from '@bear-ui/components/tree'
 import BPopover from '@bear-ui/components/popover'
 // console.log(BIcon)
-function createData(level = 4, parentKey = ''): any {
-  if (!level) return []
-  const arr = new Array(6 - level).fill(0)
-  return arr.map((_, idx: number) => {
-    const key = parentKey + level + idx
-    return {
-      label: createLabel(level),
-      key,
-      children: createData(level - 1, key)
-    }
-  })
-}
-function createLabel(level: number): string {
-  if (level === 4) return '40'
-  if (level === 3) return '3'
-  if (level === 2) return '2'
-  if (level === 1) return '1'
-  return ''
-}
-const data = ref(createData())
-
-const sourceArticles = ref([
+// function createData(level = 4, parentKey = ''): any {
+//   if (!level) return []
+//   const arr = new Array(6 - level).fill(0)
+//   return arr.map((_, idx: number) => {
+//     const key = parentKey + level + idx
+//     return {
+//       label: createLabel(level),
+//       key,
+//       children: createData(level - 1, key)
+//     }
+//   })
+// }
+// function createLabel(level: number): string {
+//   if (level === 4) return '40'
+//   if (level === 3) return '3'
+//   if (level === 2) return '2'
+//   if (level === 1) return '1'
+//   return ''
+// }
+const data = [
   {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
-  },
-  {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
-  },
-  {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
-  },
-  {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
-  },
-  {
-    article_id: '7037336504418435103',
-    title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
-    collect_count: 151, //收藏
-    comment_count: 46, // 评论数
-    ctime: '1638507790', // 创建时间
-    digg_count: 161, // 点赞数
-    view_count: 8561 // 阅读数
+    label: '123',
+    key: '123',
+    children: [
+      {
+        label: '123',
+        key: '123'
+      }
+    ]
   }
-])
-const pageIndex = ref(1)
-const pageSize = ref(1)
-const articles = computed(() =>
-  sourceArticles.value.slice(
-    (pageIndex.value - 1) * pageSize.value,
-    pageIndex.value * pageSize.value
-  )
-)
-console.log('tree', data)
+]
+
+// const sourceArticles = ref([
+//   {
+//     article_id: '7037336504418435103',
+//     title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
+//     collect_count: 151, //收藏
+//     comment_count: 46, // 评论数
+//     ctime: '1638507790', // 创建时间
+//     digg_count: 161, // 点赞数
+//     view_count: 8561 // 阅读数
+//   },
+//   {
+//     article_id: '7037336504418435103',
+//     title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
+//     collect_count: 151, //收藏
+//     comment_count: 46, // 评论数
+//     ctime: '1638507790', // 创建时间
+//     digg_count: 161, // 点赞数
+//     view_count: 8561 // 阅读数
+//   },
+//   {
+//     article_id: '7037336504418435103',
+//     title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
+//     collect_count: 151, //收藏
+//     comment_count: 46, // 评论数
+//     ctime: '1638507790', // 创建时间
+//     digg_count: 161, // 点赞数
+//     view_count: 8561 // 阅读数
+//   },
+//   {
+//     article_id: '7037336504418435103',
+//     title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
+//     collect_count: 151, //收藏
+//     comment_count: 46, // 评论数
+//     ctime: '1638507790', // 创建时间
+//     digg_count: 161, // 点赞数
+//     view_count: 8561 // 阅读数
+//   },
+//   {
+//     article_id: '7037336504418435103',
+//     title: '历时两个月！Nuxt3从入门到实战！你值得收藏！', // 标题
+//     collect_count: 151, //收藏
+//     comment_count: 46, // 评论数
+//     ctime: '1638507790', // 创建时间
+//     digg_count: 161, // 点赞数
+//     view_count: 8561 // 阅读数
+//   }
+// ])
+// const pageIndex = ref(1)
+// const pageSize = ref(1)
+// const articles = computed(() =>
+//   sourceArticles.value.slice(
+//     (pageIndex.value - 1) * pageSize.value,
+//     pageIndex.value * pageSize.value
+//   )
+// )
+// console.log('tree', data)
 </script>
 
 <template>
-  <b-tree
-    v-model:selected-keys="value"
-    :data="data"
-    selectable
-    show-checkbox
-    :default-checked-keys="['40']"
-    multiple="true"
-  ></b-tree>
-  <b-checkbox
+  <b-tree :data="data"></b-tree>
+  <!-- <b-checkbox
     :disabled="false"
     :indeterminate="true"
     label="节点"
@@ -125,7 +129,7 @@ console.log('tree', data)
     v-model="pageIndex"
     :total="sourceArticles.length"
     :page-size="pageSize"
-  ></b-pagination>
+  ></b-pagination> -->
   <!-- <b-popover>
     <template #content>
       <div>Hello World</div>
