@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import BIcon from '../src/icon.vue'
+console.log(BIcon)
 describe('Icon.vue', () => {
   it('render', () => {
     const wrapper = mount(BIcon, {
