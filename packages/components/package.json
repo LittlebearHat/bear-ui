@@ -22,9 +22,10 @@
     "@vue/test-utils": "^2.2.10"
   },
   "dependencies": {
-    "happy-dom": "^8.3.2",
-    "jsdom": "^21.1.0",
+    "@bear-ui/hooks": "workspace:*",
     "@bear-ui/utils": "workspace:*",
-    "@bear-ui/hooks": "workspace:*"
+    "@testing-library/vue": "^6.6.1",
+    "happy-dom": "^8.3.2",
+    "jsdom": "^21.1.0"
   }
 }
