@@ -1,3 +1,4 @@
+import BButton from '@bear-ui/components/button'
 // 插件
 import bDemo from './components/b-demo.vue'
 import { AddCircle, CashOutline } from '@vicons/ionicons5'
@@ -5,6 +6,7 @@ import { AddCircle, CashOutline } from '@vicons/ionicons5'
 // 引入自己组件
 import BAvatar from '@bear-ui/components/avatar'
 import BIcon from '@bear-ui/components/icon'
+
 import BTree from '@bear-ui/components/tree'
 import { BMenu, BMenuItem, BSubMenu } from '@bear-ui/components/menu'
 import {
@@ -15,6 +17,7 @@ import {
 import BPagination from '@bear-ui/components/pagination'
 export function useComponents(app) {
   app.component('BAvatar', BAvatar)
+  app.component('BButton', BButton)
   app.component('BIcon', BIcon)
   app.component('BTree', BTree)
   app.component('BMenu', BMenu)

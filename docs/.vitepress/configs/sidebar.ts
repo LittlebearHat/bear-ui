@@ -10,7 +10,7 @@ function getExampleSidebar() {
       items: [
         {
           text: 'Button 按钮',
-          link: '/examples/button'
+          link: '/examples/button/'
         },
         {
           text: 'Icon 图标',

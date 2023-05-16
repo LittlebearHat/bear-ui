@@ -9,6 +9,6 @@ export type { ButtonProps } from './src/button'
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ZButton: typeof Button
+    BButton: typeof Button
   }
 }
