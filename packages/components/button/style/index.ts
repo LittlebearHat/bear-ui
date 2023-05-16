@@ -1,1 +1,1 @@
-import '@bear-ui/theme-chalk/src/mixins/button.scss'
+import '@bear-ui/theme-chalk/src/index.scss'

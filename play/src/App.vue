@@ -7,6 +7,7 @@ import BAvatar from '@bear-ui/components/avatar'
 import { AddCircle } from '@vicons/ionicons5'
 import { TreeOption, Key } from '@bear-ui/components/tree'
 import BPopover from '@bear-ui/components/popover'
+// import BButton from '@bear-ui/components/button'
 // console.log(BIcon)
 // function createData(level = 4, parentKey = ''): any {
 //   if (!level) return []
@@ -99,7 +100,8 @@ const data = [
 </script>
 
 <template>
-  <b-tree :data="data"></b-tree>
+  <b-tree :data="data">
+  </b-tree>
   <!-- <b-checkbox
     :disabled="false"
     :indeterminate="true"
@@ -136,6 +138,14 @@ const data = [
     </template>
     <button>11</button>
   </b-popover> -->
+  <b-button
+    size="small"
+    :round="true"
+    icon-placement="right"
+    loading="true"
+  >
+    1312
+  </b-button>
 </template>
 
 <style scoped></style>

@@ -21,8 +21,7 @@
         </template>
       </b-icon>
     </template>
-    <slot>
-    </slot>
+    <slot> </slot>
     <template v-if="iconPlacement === 'right'">
       <b-icon>
         <LoadingComponent v-if="loading"></LoadingComponent>
@@ -35,20 +34,20 @@
 </template>
 
 <script lang="ts" setup>
-import LoadingComponent from '@bear-ui/components/internal-icon/Loading';
-import { createNamespace } from '@bear-ui/hooks/use-namespace';
-import { buttonEmits, buttonProps } from './button';
+import LoadingComponent from '@bear-ui/components/internal-icon/Loading'
+import { createNamespace } from '@bear-ui/hooks/use-namespace'
+import { buttonEmits, buttonProps } from './button'
 import BIcon from '@bear-ui/components/icon'
-import { useSlots } from 'vue';
+import { useSlots } from 'vue'
 
-const bem = createNamespace('button'); // b-button
+const bem = createNamespace('button') // b-button
 defineOptions({
   name: 'b-button',
   inheritAttrs: false
 })
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = defineProps(buttonProps);
-const emit = defineEmits(buttonEmits);
+const props = defineProps(buttonProps)
+const emit = defineEmits(buttonEmits)
 const slots = useSlots()
 
 const emitClick = (e: MouseEvent) => {
@@ -57,5 +56,4 @@ const emitClick = (e: MouseEvent) => {
 const emitMousedown = (e: MouseEvent) => {
   emit('mousedown', e)
 }
-
 </script>

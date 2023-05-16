@@ -7,28 +7,37 @@
   display: inline-flex;
   cursor: pointer;
   outline: none;
-  border: #fafafa;
+  border: 1px solid #dcdfe6;
   border-radius: 5px;
   user-select: none;
   min-height: 40px;
   line-height: 1;
   vertical-align: middle;
   padding: 0 20px;
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.7;
+    outline: none;
+  }
 
   @include m(medium) {
-    padding: 0 20px;
+    padding: 10px 20px;
+    font-size: 15px;
   }
 
   @include m(small) {
-    padding: 0 18px;
+    padding: 5px 10px;
+    font-size: 10px;
   }
 
   @include m(large) {
-    padding: 0 25px;
+    padding: 15px 30px;
+    font-size: 20px;
   }
 
   @include when(disabled) {
-
+    opacity: 0.5;
     // 针对不同类型处理
     &,
     &:hover,
@@ -44,6 +53,13 @@
   @include m(primary) {
     //渲染不同类型的button
     @include button-variant($color-white, $color-primary, $color-primary);
+  }
+  @include m(default) {
+    @include button-variant(
+      $color-black,
+      $color-default,
+      $color-default-border
+    );
   }
 
   @include m(success) {
