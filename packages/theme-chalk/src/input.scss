@@ -2,6 +2,8 @@
 @use 'common/var' as *;
 
 @include b(input) {
+  margin-top: 10px;
+  margin-bottom: 10px;
   // z-input
   position: relative;
   display: inline-flex;

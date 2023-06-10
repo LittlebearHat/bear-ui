@@ -8,8 +8,11 @@ import Button from '@bear-ui/components/button'
 import BTree from '@bear-ui/components/tree'
 import BCheckBox from '@bear-ui/components/checkbox'
 import BPagination from '@bear-ui/components/pagination'
+import BUpload from '@bear-ui/components/upload'
+import BCalendar from '@bear-ui/components/calendar'
+import BInput from '@bear-ui/components/input'
 
-const plugins = [BIcon, BDrawer, BModal, Button, BTree, BCheckBox, BPagination]
+const plugins = [BIcon, BDrawer, BModal, Button, BTree, BCheckBox, BPagination,BUpload,BCalendar,BInput]
 const app = createApp(App)
 plugins.forEach(plugin => app.use(plugin))
 

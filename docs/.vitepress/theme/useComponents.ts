@@ -7,6 +7,8 @@ import { AddCircle, CashOutline } from '@vicons/ionicons5'
 import BAvatar from '@bear-ui/components/avatar'
 import BIcon from '@bear-ui/components/icon'
 
+import BInput from '@bear-ui/components/input'
+import BCalendar from '@bear-ui/components/calendar'
 import BTree from '@bear-ui/components/tree'
 import { BMenu, BMenuItem, BSubMenu } from '@bear-ui/components/menu'
 import {
@@ -30,4 +32,6 @@ export function useComponents(app) {
   app.component('BDemo', bDemo)
   app.component('AddCircle', AddCircle)
   app.component('CashOutline', CashOutline)
+  app.component('BCalendar', BCalendar)
+  app.component('BInput',BInput)
 }
