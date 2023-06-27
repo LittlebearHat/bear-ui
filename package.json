@@ -9,6 +9,7 @@
     "build": "pnpm -C packages/components build",
     "test": "pnpm run -C packages/components test",
     "test:run": "pnpm vitest run",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
     "coverage": "pnpm run -C packages/components coverage",
     "play:dev": "pnpm -C play dev",
     "play:build": "pnpm -C play build",
@@ -17,7 +18,8 @@
     "docs:build": "pnpm -C docs build",
     "docs:serve": "pnpm -C docs serve",
     "prepare": "husky install",
-    "cli": "pnpm -C cli cli"
+    "cli": "pnpm -C cli cli",
+    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
   "author": "",
