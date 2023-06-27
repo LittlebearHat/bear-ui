@@ -39,12 +39,12 @@ jobs:
 
       - name: Deploy blog
         env:
-          # Github 仓库
+        # Github 仓库
           GITHUB_REPO: github.com/LittlebearHat/bear-ui
-      # 将编译后的文件推送到指定仓库
+        # 将编译后的文件推送到指定仓库
         run: |
-        cd ./docs/.vitepress/dist && git init && git add .
-        git config user.name "bear小熊帽"
-        git add .
-        git commit -m "update at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" master:gh-pages
+          cd ./docs/.vitepress/dist && git init && git add .
+          git config user.name "bear小熊帽"
+          git add .
+          git commit -m "update at $(date +'%Y-%m-%d %H:%M:%S')"
+          git push --force --quiet "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" master:gh-pages
