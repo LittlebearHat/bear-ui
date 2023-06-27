@@ -7,6 +7,7 @@ import BAvatar from '@bear-ui/components/avatar'
 import { AddCircle } from '@vicons/ionicons5'
 import { TreeOption, Key } from '@bear-ui/components/tree'
 import BPopover from '@bear-ui/components/popover'
+import { UploadRawFile } from '@bear-ui/components/upload'
 // import BButton from '@bear-ui/components/button'
 // console.log(BIcon)
 // function createData(level = 4, parentKey = ''): any {
@@ -97,11 +98,28 @@ const data = [
 //   )
 // )
 // console.log('tree', data)
+
+const handleBeforUpload = (rawFile: UploadRawFile) => {
+  return true;
+}
+
+const currentDate = ref(new Date())
+
+
+const username = ref('hello')
+const handleBlur = (e: FocusEvent) => {
+  console.log('blur');
+  
+}
+const handleFocus = (e: FocusEvent) => {
+  console.log("focus");
+  
+}
 </script>
 
 <template>
-  <b-tree :data="data">
-  </b-tree>
+  <!-- <b-tree :data="data">
+  </b-tree> -->
   <!-- <b-checkbox
     :disabled="false"
     :indeterminate="true"
@@ -138,14 +156,47 @@ const data = [
     </template>
     <button>11</button>
   </b-popover> -->
-  <b-button
+  <!-- <b-button
     size="small"
     :round="true"
     icon-placement="right"
     loading="true"
   >
     1312
-  </b-button>
+  </b-button> -->
+
+  <!-- <b-upload multiple:before-upload="handleBeforUpload" action="http://localhost:4000/upload" drag>
+    <b-button>点我上传</b-button>
+  </b-upload> -->
+
+  <!-- <b-calendar v-model="currentDate">
+    <template #date-cell="{data}">
+      <p :class="data.isSelected ? 'is-selected':''">
+      {{ data.day.split('-').slice(1).join('-') }}
+      {{ data.isSelected ? '^':''}}
+      </p>
+    </template>
+  </b-calendar> -->
+  {{ username }}
+  <b-input v-model="username"
+    @blur="handleBlur"
+    @focus="handleFocus" 
+    placeholder="请输入密码"
+    :showPassword="true"
+    :clearable="true">
+    <template #prepend>yuyu</template>
+    <template #prefixIcon>
+      <b-icon>
+        <AddCircle></AddCircle>
+      </b-icon>
+    </template>
+    <!-- <template #sufixIcon>
+      <b-icon>
+        <AddCircle></AddCircle>
+      </b-icon>
+    </template> -->
+    <template #append>yuyu</template>
+  </b-input>
 </template>
 
 <style scoped></style>
