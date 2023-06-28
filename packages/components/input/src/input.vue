@@ -49,11 +49,14 @@
 
 <script lang="ts" setup>
 import { createNamespace } from '@bear-ui/hooks';
-import { useSlots, watch ,ref, computed} from 'vue';
+import { useSlots, watch ,ref, computed, nextTick,inject} from 'vue';
 import { inputProps ,inputEmits} from './input';
 import { useAttrs } from 'vue';
 import { onMounted } from 'vue';
-import { nextTick } from 'process';
+import { formItemContextKey } from '../../form/src/form-item';
+
+
+const formItemContext = inject('form-item')
 
 defineOptions({
   name: 'b-input',
@@ -69,6 +72,7 @@ const attrs = useAttrs()
 
 //监控value的值的变化，重新赋值
 watch(() => props.modelValue, () => {
+  (formItemContext as any)?.validate('change').catch(()=>{})
   setNativeInputValue();
 })
 
@@ -84,7 +88,7 @@ const setNativeInputValue = () => {
 
 
 const focus = async () => {
-  // await nextTick()  //这里重新获取焦点
+  await nextTick()  //这里重新获取焦点
   input.value?.focus()
 }
 
@@ -124,6 +128,7 @@ const handleChange = (e: Event) => {
 }
 
 const handleBlur = (e: FocusEvent) => {
+ ( formItemContext as any)?.validate('blur').catch(()=>{})
   emit('blur',e)
 }
 const handleFocus = (e: FocusEvent) => {

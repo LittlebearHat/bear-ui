@@ -57,7 +57,7 @@ function getExampleSidebar() {
       items: [
         {
           text: 'Form 表单',
-          link: '/examples/form'
+          link: '/examples/form/'
         },
         {
           text: 'Upload 上传',

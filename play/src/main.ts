@@ -11,8 +11,9 @@ import BPagination from '@bear-ui/components/pagination'
 import BUpload from '@bear-ui/components/upload'
 import BCalendar from '@bear-ui/components/calendar'
 import BInput from '@bear-ui/components/input'
+import {BFormItem,BForm}from '@bear-ui/components/form'
 
-const plugins = [BIcon, BDrawer, BModal, Button, BTree, BCheckBox, BPagination,BUpload,BCalendar,BInput]
+const plugins = [BIcon, BDrawer, BModal, Button, BTree, BCheckBox, BPagination,BUpload,BCalendar,BFormItem,BForm,BInput]
 const app = createApp(App)
 plugins.forEach(plugin => app.use(plugin))
 

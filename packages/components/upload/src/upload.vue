@@ -2,7 +2,7 @@
   <UploadContent v-bind="uploadContentProps">
     <slot></slot>
   </UploadContent>
-  {{uploadFiles}}
+  <!-- {{uploadFiles}} -->
 </template>
 
 <script lang="ts" setup>

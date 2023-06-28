@@ -8,6 +8,8 @@ import { AddCircle } from '@vicons/ionicons5'
 import { TreeOption, Key } from '@bear-ui/components/tree'
 import BPopover from '@bear-ui/components/popover'
 import { UploadRawFile } from '@bear-ui/components/upload'
+import { reactive } from 'vue'
+import{FormInstance} from '@bear-ui/components/form'
 // import BButton from '@bear-ui/components/button'
 // console.log(BIcon)
 // function createData(level = 4, parentKey = ''): any {
@@ -103,18 +105,30 @@ const handleBeforUpload = (rawFile: UploadRawFile) => {
   return true;
 }
 
-const currentDate = ref(new Date())
+// const currentDate = ref(new Date())
 
 
-const username = ref('hello')
-const handleBlur = (e: FocusEvent) => {
-  console.log('blur');
-  
-}
-const handleFocus = (e: FocusEvent) => {
-  console.log("focus");
-  
-}
+// const username = ref('hello')
+// const handleBlur = (e: FocusEvent) => {
+//   console.log('blur');
+
+// }
+// const handleFocus = (e: FocusEvent) => {
+//   console.log("focus");
+
+// }
+
+
+// const state = reactive({ username: '', password: '' })
+// const formRef = ref<FormInstance>()
+
+// const validateForm = () => {
+//   const form = formRef.value
+//   form?.validate((valid, errors) => {
+//     console.log(valid,errors);
+    
+//   })
+// }
 </script>
 
 <template>
@@ -165,9 +179,9 @@ const handleFocus = (e: FocusEvent) => {
     1312
   </b-button> -->
 
-  <!-- <b-upload multiple:before-upload="handleBeforUpload" action="http://localhost:4000/upload" drag>
+  <b-upload multiple:before-upload="handleBeforUpload" action="http://localhost:4000/upload" drag>
     <b-button>点我上传</b-button>
-  </b-upload> -->
+  </b-upload>
 
   <!-- <b-calendar v-model="currentDate">
     <template #date-cell="{data}">
@@ -177,8 +191,9 @@ const handleFocus = (e: FocusEvent) => {
       </p>
     </template>
   </b-calendar> -->
-  {{ username }}
-  <b-input v-model="username"
+
+
+  <!-- <b-input v-model="username"
     @blur="handleBlur"
     @focus="handleFocus" 
     placeholder="请输入密码"
@@ -190,13 +205,49 @@ const handleFocus = (e: FocusEvent) => {
         <AddCircle></AddCircle>
       </b-icon>
     </template>
-    <!-- <template #sufixIcon>
-      <b-icon>
-        <AddCircle></AddCircle>
-      </b-icon>
-    </template> -->
+
     <template #append>yuyu</template>
-  </b-input>
+  </b-input> -->
+
+  <!-- <b-form 
+    ref="formRef" 
+    :model="state" 
+    :rules="{
+      username:{
+        min:6,
+        max:10,
+        message:'用户名字6-10位',
+        trigger:['change','blur']
+      }
+    }"
+  >
+    <b-form-item 
+      prop="username"
+      :rules="[{required:true, message:'请输入姓名',trigger:'blur'}]"
+    >
+      <b-input 
+        v-model="state.username" 
+        placeholder="请输入用户名"
+      />
+      <template #label>用户名</template>
+    </b-form-item>
+
+    <b-form-item 
+      prop="password"
+      :rules="[{required:true, message:'请输入密码',trigger:'blur'}]"
+    >
+      <b-input 
+        v-model="state.password" 
+        placeholder="请输入密码" 
+        type="password"
+      />
+      <template #label>密码</template>
+    </b-form-item>
+    <b-button a="1" b="2" size="medium" type="primary" :round="true" @click="validateForm">
+      按钮
+    </b-button>
+  </b-form> -->
+ 
 </template>
 
 <style scoped></style>

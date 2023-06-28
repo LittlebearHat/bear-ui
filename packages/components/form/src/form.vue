@@ -12,7 +12,7 @@ import { formProps, FormContextKey, FormContext } from './form'
 import { FormItemContext } from './form-item'
 const bem = createNamespace('form')
 defineOptions({
-  name: 'z-form'
+  name: 'b-form'
 })
 
 const props = defineProps(formProps)

@@ -8,7 +8,7 @@ export default BInput  //app.use(Calendar)
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BCalendar: typeof BInput
+    BInput: typeof BInput
   }
 }
 export * from './src/input'
