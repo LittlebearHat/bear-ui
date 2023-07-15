@@ -1,0 +1,72 @@
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+
+@include b(calendar){
+  @include e(header){
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    align-items: center;
+
+  };
+  @include e(title){
+    font-size: 25px;
+    color: #891010;
+  };
+  @include e(button-group){
+    button{
+      transform: scale(0.8)
+    }
+  };
+  
+}
+.line{
+  width: 100%;
+  height: 1px;
+  border-top: solid rgb(61, 60, 60) 1px;
+  margin-bottom: 40px;
+}
+@include b(calendar-table){
+  width: 100%;
+  table-layout: fixed;
+  th{
+    font-size: 18px;
+    padding: 5px;
+  }
+  td{
+    border-bottom: 1px solid $color-info;
+    border-right: 1px solid $color-info;
+
+    @include when(selected){
+      color: rgb(68, 66, 66);
+      background: rgb(220, 218, 218);
+    }
+    @include when(waring){
+      color: #fff;
+      background: $color-warning;
+    }
+  }
+  td.prev,td.next{
+    color:  $color-info;
+  }
+  tr{
+    td:first-child{
+      border-left: 1px solid $color-info;
+    }
+  }
+  tr:first-child{
+    td{
+      border-top: 1px solid $color-info;
+    }
+  }
+}
+
+@include b(calendar-day){
+  padding: 8px;
+  height: 60px;
+  font-size: 16px;
+  &:hover{
+    cursor: pointer;
+    background-color: rgb(220, 218, 218);
+  }
+}

@@ -1,0 +1,8 @@
+@use 'mixins/mixins.scss' as *;
+
+@include b(upload){
+  display: inline-block;
+  input{
+    display: none;
+  }
+}

@@ -15,6 +15,10 @@ function getExampleSidebar() {
         {
           text: 'Icon 图标',
           link: '/examples/icon'
+        },
+        {
+          text: 'Input 输入',
+          link:'/examples/input'
         }
       ]
     },
@@ -24,6 +28,10 @@ function getExampleSidebar() {
         {
           text: 'Switch 开关',
           link: '/examples/switch'
+        },
+        {
+          text: 'Calendar 日历',
+          link:'examples/calendar'
         }
       ]
     },
