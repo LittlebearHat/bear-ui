@@ -3,14 +3,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-
+import dts from 'vite-plugin-dts'
 // import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
     target: 'modules',
     //打包文件目录
-    outDir: 'es',
+    outDir: '../../packages',
     //压缩
     minify: false,
     //css分离
@@ -27,7 +27,7 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           //配置打包根目录
-          dir: 'es',
+          dir: '../bear-ui/es',
           preserveModulesRoot: '',
           sourcemap: true,
           exports: 'named' /** Disable warning for default imports */
@@ -38,7 +38,7 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           //配置打包根目录
-          dir: 'lib',
+          dir: '../bear-ui/lib',
           preserveModulesRoot: '',
           sourcemap: true,
           exports: 'named' /** Disable warning for default imports */
@@ -53,7 +53,13 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    DefineOptions()
+    DefineOptions(),
+    dts({
+      entryRoot: './src',
+      outputDir: ['../bear-ui/es/src', '../bear-ui/lib/src'],
+      //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
+      tsConfigFilePath: '../../tsconfig.json'
+    })
     // dts({
     //   //指定使用的tsconfig.json为整个项目根目录下掉,
     //   tsConfigFilePath: '../../tsconfig.json'
