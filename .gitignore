@@ -14,7 +14,8 @@ dist-ssr
 *.eslintcache
 cache
 pnpm-lock.yaml
-
+bear-ui
+dist
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
