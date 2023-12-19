@@ -1,5 +1,5 @@
 {
-  "name": "@bear-ui/components",
+  "name": "@bear-plus/components",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
@@ -27,5 +27,8 @@
     "@testing-library/vue": "^6.6.1",
     "happy-dom": "^8.3.2",
     "jsdom": "^21.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "bear-ui",
+  "name": "bear-plus",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "docs:serve": "pnpm -C docs serve",
     "prepare": "husky install",
     "cli": "pnpm -C cli cli",
+    "update-pkg": "cd scripts && node build.js",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
@@ -37,6 +38,7 @@
     "@bear-ui/utils": "workspace:*",
     "@vueuse/core": "^9.10.0",
     "async-validator": "^4.2.5",
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dayjs": "^1.11.7",
     "express": "^4.18.2",
@@ -46,6 +48,7 @@
   },
   "devDependencies": {
     "@bear-ui/eslint-config": "workspace:*",
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^18.11.18",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",

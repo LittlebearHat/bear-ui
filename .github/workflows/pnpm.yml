@@ -25,11 +25,11 @@ jobs:
       - name: Build
         run: pnpm build
       # 组件库Vitest测试
-      # - name: Vitest Test
-      #   run: pnpm test:run
-      # # 组件库Vitest coverage测试覆盖率报告
-      # - name: Vitest Test
-      #   run: pnpm coverage
+      - name: Vitest Test
+        run: pnpm test:run
+      # 组件库Vitest coverage测试覆盖率报告
+      - name: Vitest Test
+        run: pnpm coverage
       # 演示demo打包测试
       - name: Build Play
         run: pnpm play:build

@@ -1,5 +1,5 @@
 {
-  "name": "@bear-ui/eslint-config",
+  "name": "@bear-/eslint-config",
   "version": "0.0.1",
   "description": "ESLint Config",
   "license": "MIT",

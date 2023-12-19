@@ -17,7 +17,7 @@ export default defineConfig({
     //cssCodeSplit: true,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue'],
+      external: ['vue', '@bear-ui/utils'],
       input: ['index.ts'],
       output: [
         {
@@ -55,7 +55,7 @@ export default defineConfig({
     vueJsx(),
     DefineOptions(),
     dts({
-      entryRoot: './src',
+      entryRoot: 'src',
       outputDir: ['../bear-ui/es/src', '../bear-ui/lib/src'],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: '../../tsconfig.json'
